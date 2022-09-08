@@ -8,7 +8,7 @@ app.use(express.json());
 
 const port = process.env.PORT || 8000
 
-app.all('/proxy/?*', jsforceAjaxProxy());
+app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
